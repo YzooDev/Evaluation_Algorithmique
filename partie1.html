@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/style.css">
     <title>Rattrapage Evaluation d'Algorithmique | Rémi</title>
@@ -12,8 +13,8 @@
         <nav class="text-4xl font-bold mt-10">
             <a class="btn btn-warning btn-outline" href="/index.html">Accueil</a>
             <a class="btn btn-primary btn-outline" href="/partie1.html">Partie 1</a>
-            <a class="btn btn-secondary btn-outline">Partie 2</a>
-            <a class="btn btn-accent btn-outline">Partie 3</a>
+            <a class="btn btn-secondary btn-outline" href="/partie2.html">Partie 2</a>
+            <a class="btn btn-accent btn-outline" href="/partie3.html">Partie 3</a>
         </nav>
     </header> 
     <main class="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
@@ -21,7 +22,7 @@
         <section class="mb-12">
             <div class="card bg-base-100 shadow-xl">
                 <div class="card-body">
-                    <h3 class="card-title text-2xl">Qu'est ce qu'un algorithme ?</h3>
+                    <h3 class="card-title text-2xl">1. Qu'est ce qu'un algorithme ?</h3>
                     <p class="font-bold space-y-2 mt-3">
                         Un algorithme est une suite d'instructions logiques, ordonnées et finies, permettant de résoudre un
                         problème ou d'atteindre un résultat précis.
@@ -44,7 +45,7 @@
         <section class="mb-12">
             <div class="card bg-base-100 shadow-xl">
                 <div class="card-body">
-                    <h3 class="card-title text-2xl">Qu'est-ce qu'une variable ?</h3>
+                    <h3 class="card-title text-2xl">2. Qu'est-ce qu'une variable ?</h3>
                     <p class="font-bold space-y-2 mt-3">
                         Une variable est un espace de mémoire qui permet de stocker une information afin de la réutiliser ou de la modifier plus tard.
                     </p>
@@ -69,7 +70,7 @@
         <section class="mb-12">
             <div class="card bg-base-100 shadow-xl">
             <div class="card-body">
-                <h3 class="card-title text-2xl">Qu'est-ce qu'une fonction ?</h3>
+                <h3 class="card-title text-2xl">3. Qu'est-ce qu'une fonction ?</h3>
                 <p class="font-bold space-y-2 mt-3">
                     Une fonction est un sous-algorithme contenant un bloc d'instructions qui réalise une tâche précise. Pour celà, elle peut recevoir des données entrée et retourner un résultat.
                 </p>
@@ -98,7 +99,7 @@
         <section class="mb-12">
             <div class="card bg-base-100 shadow-xl">
             <div class="card-body">
-                <h3 class="card-title text-2xl">Qu'est-ce qu'un tableau ?</h3>
+                <h3 class="card-title text-2xl">4. Qu'est-ce qu'un tableau ?</h3>
                 <p class="font-bold space-y-2 mt-3">
                     Un tableau est une collection de données, stockées dans une seule structure.
                 </p>
@@ -118,6 +119,79 @@
                     <li>appliquer des traitements (calculs, recherches, affichage)</li>
                 </ul>
             </div>
+            </div>
+        </section>
+        <section class="mb-12">
+            <div class="card bg-primary/80 text-primary-content shadow-lg">
+                <div class="card-body">
+                    <h2 class="card-title text-2xl">5. Identifier les erreurs</h2>
+                    <p class="mb-4">
+                        Analysez l'algorithme ci-dessous, et identifiez les 2 erreurs présentes. Puis, proposer une correction. 
+                    </p>
+                    <pre class="mockup-code text-left">
+                        <code>
+    ALGORITHME calculerMoyenne 
+
+    notes ← [12, 15, 8] 
+    somme ← 0 
+    POUR i de 1 à 3 
+        somme ← notes[i] 
+    FIN POUR 
+    moyenne ← somme / 3 
+    AFFICHER moyenne 
+    FIN 
+                        </code>
+                    </pre>
+                    <pre class="mockup-code text-left">
+                        <code>
+    ALGORITHME calculerMoyenne  
+
+    notes ← [12, 15, 8] 
+    somme ← 0 
+    POUR i de <span class="font-bold text-primary">0 à 2</span>
+        somme ← <span class="font-bold text-primary">somme +</span> notes[i] 
+    FIN POUR 
+    moyenne ← somme / 3 
+    AFFICHER moyenne 
+    FIN 
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+        <section class="mb-12">
+            <div class="card bg-primary/80 text-primary-content shadow-lg">
+                <div class="card-body">
+                    <h2 class="card-title text-2xl">6. Compléter l'algorithme</h2>
+                    <p class="mb-4">
+                        Compléter la condition manquante dans l'algorithme ci-dessous, et expliquez en une phrase ce que fait cette fonction.
+                    </p>
+                    <pre class="mockup-code text-left">
+                        <code>
+    FONCTION estPair(nombre) 
+        SI ____________ 
+            RETOURNER vrai 
+        SINON 
+            RETOURNER faux 
+        FIN SI 
+    FIN FONCTION 
+                        </code>
+                    </pre>
+                    <pre class="mockup-code text-left">
+                        <code>
+    FONCTION estPair(nombre) 
+        SI modulo 2 = O 
+            RETOURNER vrai 
+        SINON 
+            RETOURNER faux 
+        FIN SI 
+    FIN FONCTION 
+                        </code>
+                    </pre>
+                    <p class="mb-4">
+                        C'est une fonction qui retourne en résultat si le nombre en paramètre est pair (vrai) ou pas (faux).
+                    </p>
+                </div>
             </div>
         </section>
     </main>

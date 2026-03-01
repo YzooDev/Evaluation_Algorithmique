@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css">
+    <title>Rattrapage Evaluation d'Algorithmique | Rémi</title>
+</head>
+<body class="min-h-screen bg-base-200">
+    <header class="text-center p-10">
+        <h1 class="text-4xl font-bold mb-10">Rattrapage Evaluation d'Algorithmique</h1>
+        <nav class="text-4xl font-bold mt-10">
+            <a class="btn btn-warning btn-outline" href="/index.html">Accueil</a>
+            <a class="btn btn-primary btn-outline" href="/partie1.html">Partie 1</a>
+            <a class="btn btn-secondary btn-outline" href="/partie2.html">Partie 2</a>
+            <a class="btn btn-accent btn-outline" href="/partie3.html">Partie 3</a>
+        </nav>
+    </header> 
+    <main class="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+        <h2 class="font-bold text-3xl text-center p-10">Partie 2 : Exercices algorithmiques</h2>      
+        <section class="mb-12">
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h3 class="card-title text-2xl">Exercice 1 : Manipulation de tableau simple</h3>
+                    <p class="font-bold space-y-2 mt-3">Écrire un algorithme qui :</p>
+                    <ol class="list-decimal list-inside">
+                        <li>Crée un tableau contenant les nombres : [3, 15, 7, 22, 9, 18, 4, 12]</li>
+                        <li>Affiche uniquement les nombres supérieurs à 10</li>
+                        <li>Compte et affiche combien de nombres sont supérieurs à 10 </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <section class="mb-12">
+            <div class="card bg-secondary/70 text-primary-content shadow-lg">
+                <div class="card-body">
+                    <h2 class="card-title text-2xl">5. Identifier les erreurs</h2>
+                    <p class="mb-4">
+                        Analysez l'algorithme ci-dessous, et identifiez les 2 erreurs présentes. Puis, proposer une correction. 
+                    </p>
+                    <pre class="mockup-code text-left">
+                        <code>
+    ALGORITHME calculerMoyenne 
+
+    notes ← [12, 15, 8] 
+    somme ← 0 
+    POUR i de 1 à 3 
+        somme ← notes[i] 
+    FIN POUR 
+    moyenne ← somme / 3 
+    AFFICHER moyenne 
+    FIN 
+                        </code>
+                    </pre>
+                    <pre class="mockup-code text-left">
+                        <code>
+    ALGORITHME calculerMoyenne  
+
+    notes ← [12, 15, 8] 
+    somme ← 0 
+    POUR i de <span class="font-bold text-primary">0 à 2</span>
+        somme ← <span class="font-bold text-primary">somme +</span> notes[i] 
+    FIN POUR 
+    moyenne ← somme / 3 
+    AFFICHER moyenne 
+    FIN 
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="text-center pb-10 mt-10">
+        <p class="text-lg text-base-content max-w-xl mx-auto">
+            Lien de téléchargement du docx : 
+        </p>
+        <p class="text-lg text-primary max-w-2xl mx-auto">
+            <a href="https://docs.google.com/document/d/1bc4HaWU69b5nCybgeczRyEPY1MC8OLY4/edit?usp=drive_link&ouid=105637924858175107260&rtpof=true&sd=true">Algo_Evaluation_Rattrage-Bezes_Remi.docx</a>
+        </p>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
