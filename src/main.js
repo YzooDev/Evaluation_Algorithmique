@@ -1,24 +1,40 @@
-// import './style.css'
-// import javascriptLogo from './javascript.svg'
-// import viteLogo from '/vite.svg'
-// import { setupCounter } from './counter.js'
+//! EXERCICE 1
 
-// document.querySelector('#app').innerHTML = `
-//   <div>
-//     <a href="https://vite.dev" target="_blank">
-//       <img src="${viteLogo}" class="logo" alt="Vite logo" />
-//     </a>
-//     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-//       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-//     </a>
-//     <h1>Hello Vite!</h1>
-//     <div class="card">
-//       <button id="counter" type="button"></button>
-//     </div>
-//     <p class="read-the-docs">
-//       Click on the Vite logo to learn more
-//     </p>
-//   </div>
-// `
+//TODO 1. Crée un tableau contenant les nombres : [3, 15, 7, 22, 9, 18, 4, 12] 
 
-// setupCounter(document.querySelector('#counter'))
+const table = [3, 15, 7, 22, 9, 18, 4, 12];
+
+//TODO 2. Affiche uniquement les nombres supérieurs à 10
+// Avec la boucle for :
+for (let i = 0; i < table.length; i++) {
+    if (table[i] > 10) {
+        console.log(table[i])
+    }  
+};
+
+// Avec la boucle for each :
+table.forEach(element => {
+    if (element > 10) {
+        console.log(element)
+    }
+});
+
+//TODO 3. Compte et affiche combien de nombres sont supérieurs à 10 
+
+let counter = 0;
+
+// Avec la boucle for :
+for (let i = 0; i < table.length; i++) {
+    if (table[i] > 10) {
+        counter++;
+    }  
+}
+console.log(counter);
+
+// // Avec la boucle for each :
+// table.forEach(element => {
+//     if (element>10) {
+//         counter++;
+//     }
+// });
+// console.log(counter);

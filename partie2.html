@@ -33,38 +33,99 @@
             </div>
         </section>
         <section class="mb-12">
-            <div class="card bg-secondary/70 text-primary-content shadow-lg">
-                <div class="card-body">
-                    <h2 class="card-title text-2xl">5. Identifier les erreurs</h2>
+           <div class="card bg-secondary/70 text-primary-content shadow-lg">
+                 <div class="card-body">
+                    <h2 class="card-title text-2xl">1.</h2>
                     <p class="mb-4">
-                        Analysez l'algorithme ci-dessous, et identifiez les 2 erreurs présentes. Puis, proposer une correction. 
+                        Crée un tableau contenant les nombres : [3, 15, 7, 22, 9, 18, 4, 12] 
                     </p>
                     <pre class="mockup-code text-left">
                         <code>
-    ALGORITHME calculerMoyenne 
+    <span class="font-bold text-secondary">ALGORITHME :</span>
 
-    notes ← [12, 15, 8] 
-    somme ← 0 
-    POUR i de 1 à 3 
-        somme ← notes[i] 
-    FIN POUR 
-    moyenne ← somme / 3 
-    AFFICHER moyenne 
-    FIN 
+    table ← [3, 15, 7, 22, 9, 18, 4, 12] 
                         </code>
                     </pre>
                     <pre class="mockup-code text-left">
                         <code>
-    ALGORITHME calculerMoyenne  
+    <span class="font-bold text-secondary">JavaScript :</span> 
 
-    notes ← [12, 15, 8] 
-    somme ← 0 
-    POUR i de <span class="font-bold text-primary">0 à 2</span>
-        somme ← <span class="font-bold text-primary">somme +</span> notes[i] 
-    FIN POUR 
-    moyenne ← somme / 3 
-    AFFICHER moyenne 
-    FIN 
+    const table = [3, 15, 7, 22, 9, 18, 4, 12]
+                        </code>
+                    </pre>    
+                    </pre>
+                    <h2 class="card-title text-2xl mt-4">2.</h2>
+                    <p class="mb-4">
+                        Affiche uniquement les nombres supérieurs à 10
+                    </p>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">ALGORITHME :</span>
+
+    POUR i de 0 à taille de table - 1
+        SI table[i] > 10
+            AFFICHER table[i]
+        FIN SI
+    FIN POUR
+                        </code>
+                    </pre>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">JavaScript :</span> 
+
+    // Avec la boucle for :
+    for (let i = 0; i < table.length; i++) {
+        if (table[i] > 10) {
+            console.log(table[i])
+        }  
+    };
+
+    // Avec la boucle for each :
+    table.forEach(element => {
+        if (element > 10) {
+            console.log(element)
+        }
+    });
+                        </code>
+                    </pre>
+                    <h2 class="card-title text-2xl mt-4">3.</h2>
+                    <p class="mb-4">
+                        Compte et affiche combien de nombres sont supérieurs à 10
+                    </p>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">ALGORITHME :</span>
+    
+    counter ← 0
+    POUR i de 0 à taille de table - 1
+        SI table[i] > 10
+            counter ← counter + 1
+        FIN SI
+    FIN POUR
+    AFFICHER counter
+                        </code>
+                    </pre>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">JavaScript :</span>
+
+    let counter = 0;
+
+    // Avec la boucle for :
+    for (let i = 0; i < table.length; i++) {
+        if (table[i] > 10) {
+            counter++;
+        }  
+    }
+    console.log(counter);
+
+    // Avec la boucle for each :
+    table.forEach(element => {
+        if (element>10) {
+            counter++;
+        }
+    });
+    console.log(counter);
                         </code>
                     </pre>
                 </div>
