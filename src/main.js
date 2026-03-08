@@ -21,23 +21,23 @@ table.forEach(element => {
 
 //TODO 3. Compte et affiche combien de nombres sont supérieurs à 10 
 
-let counter = 0;
+let compteur = 0;
 
 // Avec la boucle for :
 for (let i = 0; i < table.length; i++) {
     if (table[i] > 10) {
-        counter++;
+        compteur++;
     }  
 }
-console.log(counter);
+console.log(compteur);
 
 // // Avec la boucle for each :
 // table.forEach(element => {
 //     if (element>10) {
-//         counter++;
+//         compteur++;
 //     }
 // });
-// console.log(counter);
+// console.log(compteur);
 
 
 //! EXERCICE 2
