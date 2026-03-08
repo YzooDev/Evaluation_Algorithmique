@@ -155,6 +155,6 @@ for(let i = 0; i < tableEx4.length - 1; i++) {
     if(tri) {
         break;
     }
-}
+};
 console.log(tableEx4);
 

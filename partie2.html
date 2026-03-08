@@ -293,9 +293,9 @@
         [16, 18, 17, 19]   // Élève 3 
     ]
 
-    POUR i de 0 à Taille de notes - 1
+    POUR i de 0 à taille de notes - 1
         note ← notes[i][0];
-        POUR j de 1 à Taille de notes[i] - 1
+        POUR j de 1 à taille de notes[i] - 1
             note ← note + ", " + notes[i][j]
         FIN POUR
         AFFICHER "Elève " + (i + 1) + " : " + note"
@@ -340,7 +340,7 @@
     FONCTION calculerMoyenneEleve(tableau, numeroEleve)
         nombreNotes ← 0
         sommeNotes ← 0
-        POUR j de 0 à Taille de tableau - 1
+        POUR j de 0 à taille de tableau - 1
             nombreNotes ← nombreNotes + 1
             sommeNotes ← sommeNotes + tableau[j]
         FIN POUR
@@ -392,7 +392,7 @@
     meilleureMoyenne ← 0
     numeroEleve ← 0
 
-    POUR i de 0 à Taille notes
+    POUR i de 0 à taille notes
         SI calculerMoyenneEleve(notes[i], i) > meilleureMoyenne
             meilleureMoyenne ← calculerMoyenneEleve(notes[i], i)
         FIN SI
@@ -455,9 +455,9 @@
 
     tableau ← [64, 34, 25, 12, 22, 11, 90]
 
-    POUR i de 0 à Taille de tableau - 2
+    POUR i de 0 à taille de tableau - 2
         tri ← vrai
-        POUR j de 0 à Taille de tableau - 2 - i
+        POUR j de 0 à taille de tableau - 2 - i
             SI tableau[j] > tableau[j + 1]
                 temp ← tableau[j]
                 tableau[j] ← tableau[j + 1]
