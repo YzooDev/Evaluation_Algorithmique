@@ -40,27 +40,6 @@ console.log(compteur);
 // console.log(counter);
 
 //----------------------------------------------------------------------
-//! EXERCICE 2
-
-//TODO Fonction qui calcul le prix TTX
-
-function calculerPrixTTC(prixHT, tauxTVA) {
-    let prixTTC = prixHT + (prixHT * tauxTVA / 100);
-    return prixTTC
-};
-
-// console.log(calculerPrixTTC(10,2));
-
-//TODO Algorithme principal
-
-let prixHT = 0;
-let tauxTVA = 0;
-
-if (prixHT > 0) {
-    prixHT = prompt("Entrez le prix HT :");
-}
-// console.log(compteur);
-
 
 //! EXERCICE 2
 
@@ -86,10 +65,10 @@ buttonCalcul.addEventListener("click", () => {
     const prixHT = inputPrixHT.value;
     const tauxTVA = inputTauxTVA.value;
     if (prixHT > 0 && tauxTVA > 0 && tauxTVA < 100) {
-        result.innerText = ` ${calculerPrixTTC(parseInt(prixHT), parseInt(tauxTVA))}`;
+        result.innerText = `    ${calculerPrixTTC(parseInt(prixHT), parseInt(tauxTVA))}`;
         console.log(calculerPrixTTC(parseInt(prixHT), parseInt(tauxTVA)));
     } else {
-        result.innerText = ' Veuillez saisir un prix HT et un taux de TVA valide';
+        result.innerText = '    Veuillez saisir un prix HT et un taux de TVA valide';
     };
 });
 // console.log(calculerPrixTTC(inputPrixHT.value, inputTauxTVA.value));
