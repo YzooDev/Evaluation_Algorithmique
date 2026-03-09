@@ -18,7 +18,7 @@
         </nav>
     </header> 
     <main class="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
-        <h2 class="font-bold text-3xl text-center p-10">Partie 2 : Exercices algorithmiques</h2>      
+        <h3 class="font-bold text-3xl text-center p-10">Partie 2 : Exercices algorithmiques</h3>      
         <section class="mb-12">
             <div class="card bg-base-100 shadow-xl">
                 <div class="card-body">
@@ -35,7 +35,7 @@
         <section class="mb-12">
            <div class="card bg-secondary/70 text-primary-content shadow-lg">
                  <div class="card-body">
-                    <h2 class="card-title text-2xl">1.</h2>
+                    <h3 class="card-title text-2xl">1.</h3>
                     <p class="mb-4">
                         Crée un tableau contenant les nombres : [3, 15, 7, 22, 9, 18, 4, 12] 
                     </p>
@@ -53,7 +53,7 @@
     const table = [3, 15, 7, 22, 9, 18, 4, 12]
                         </code>
                     </pre>    
-                    <h2 class="card-title text-2xl mt-4">2.</h2>
+                    <h3 class="card-title text-2xl mt-4">2.</h3>
                     <p class="mb-4">
                         Affiche uniquement les nombres supérieurs à 10
                     </p>
@@ -87,7 +87,7 @@
     });
                         </code>
                     </pre>
-                    <h2 class="card-title text-2xl mt-4">3.</h2>
+                    <h3 class="card-title text-2xl mt-4">3.</h3>
                     <p class="mb-4">
                         Compte et affiche combien de nombres sont supérieurs à 10
                     </p>
@@ -95,36 +95,36 @@
                         <code>
     <span class="font-bold text-secondary">ALGORITHME :</span>
     
-    counter ← 0
+    compteur ← 0
     POUR i de 0 à taille de table - 1
         SI table[i] > 10
-            counter ← counter + 1
+            compteur ← compteur + 1
         FIN SI
     FIN POUR
-    AFFICHER counter
+    AFFICHER compteur
                         </code>
                     </pre>
                     <pre class="mockup-code text-left">
                         <code>
     <span class="font-bold text-secondary">JavaScript :</span>
 
-    let counter = 0;
+    let compteur = 0;
 
     // Avec la boucle for :
     for (let i = 0; i < table.length; i++) {
         if (table[i] > 10) {
-            counter++;
+            compteur++;
         }  
     }
-    console.log(counter);
+    console.log(compteur);
 
     // Avec la boucle for each :
     table.forEach(element => {
-        if (element>10) {
-            counter++;
+        if (element > 10) {
+            compteur++;
         }
     });
-    console.log(counter);
+    console.log(compteur);
                         </code>
                     </pre>
                 </div>
@@ -135,28 +135,221 @@
                 <div class="card-body">
                     <h3 class="card-title text-2xl">Exercice 2 : Fonction avec paramètres et retour</h3>
                     <p class="font-bold space-y-2 mt-3">Écrire une fonction calculerPrixTTC(prixHT, tauxTVA) qui :</p>
-                    <ul class="list-inside list-disc">
-                        <li>Prend en paramètre un prix HT et un taux de TVA (en pourcentage)</li>
+                    <ul class="list-disc list-inside">
+                        <li>Prend en paramètre un prix HT et un taux de TVA(en pourcentage)</li>
                         <li>Calcule le prix TTC</li>
                         <li>Retourne le prix TTC</li>
                     </ul>
+                    <p class="font-bold space-y-2 mt-3">Ensuite, écrire un algorithme principal qui :</p>
+                    <ul class="list-disc list-inside">
+                        <li>Demande un prix HT à l'utilisateur</li>
+                        <li>Demande un taux de TVA</li>
+                        <li>Appelle la fonction</li>
+                        <li>Affiche le résultat avec un message clair</li>
+                    </ul> 
                 </div>
             </div>
         </section>
         <section class="mb-12">
            <div class="card bg-secondary/70 text-primary-content shadow-lg">
-                 <div class="card-body">
-                    <h2 class="card-title text-2xl">1.</h2>
+                 <div class="card-body" id="exoPrixTTC">
                     <p class="mb-4">
-                        Crée un tableau contenant les nombres : [3, 15, 7, 22, 9, 18, 4, 12] 
+                        Fonction calculerPrixTTC(prixHT, tauxTVA)
                     </p>
                     <pre class="mockup-code text-left">
                         <code>
     <span class="font-bold text-secondary">ALGORITHME :</span>
 
     FONCTION calculerPrixTTC(prixHT, tauxTVA)
-        prixTTC ← prixHT × tauxTVA / 100
-        RETOURNER prixTTC
+        SI prixHT > 0 et tauxTVA > 0
+            RETOURNER prixTTC ← prixHT + (prixHT * tauxTVA / 100)
+        FIN SI
+    FIN
+                        </code>
+                    </pre>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">JavaScript :</span> 
+
+    function calculerPrixTTC(prixHT, tauxTVA) {
+        if (prixHT > 0 && tauxTVA > 0) {
+            return prixTTC = prixHT + (prixHT * tauxTVA / 100)
+        }
+    };
+                        </code>
+                    </pre>    
+                    <p class="mb-4 mt-8">
+                        Algorithme principal
+                    </p>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">ALGORITHME :</span>
+
+    DEMANDER prixHT
+    STOCKER prixHT
+    DEMANDER tauxTVA
+    SOTCKER tauxTVA
+    prixTTC ← calculerPrixTTC(prixHT, tauxTVA)
+    AFFICHER "le prix TTC est : " + prixTTC
+                        </code>
+                    </pre>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">JavaScript :</span> 
+
+    let buttonCalcul = document.querySelector('button');
+    buttonCalcul.addEventListener("click", () => {
+        const inputPrixHT = document.getElementById('prixHT');
+        const inputTauxTVA = document.getElementById('tauxTVA');
+        let result = document.getElementById('result');
+        const prixHT = inputPrixHT.value;
+        const tauxTVA = inputTauxTVA.value;
+        if (prixHT > 0 && tauxTVA > 0 && tauxTVA < 100) {
+            result.innerText = ` ${calculerPrixTTC(parseInt(prixHT), parseInt(tauxTVA))}`;
+            console.log(calculerPrixTTC(parseInt(prixHT), parseInt(tauxTVA)));
+        } else {
+            result.innerText = ' Veuillez saisir un prix HT et un taux de TVA valide';
+        };
+    });
+                        </code>
+                    </pre>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">Exécution :</span>
+
+    Entrez le prix HT : <input type="text" class="text-white border-2 border-white" id="prixHT">
+
+    Entrez le taux de TVA : <input type="text" class="text-white border-2 border-white " id="tauxTVA">
+
+    <button class="btn btn-secondary btn-outline">Calculer prixTTC</button>
+    
+    Le prix TTC est : <span type="text" class="text-white" id="result"></span>
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </section>     
+        <section class="mb-12">
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h3 class="card-title text-2xl">Exercice 3 : Tableau multidimensionnel</h3>
+                    <p class="font-bold space-y-2 mt-3">Un tableau représente les notes de 3 élèves sur 4 matières</p>
+                    <pre class="mockup-code text-left mb-4">
+                        <code>
+    notes ← [ 
+        [12, 15, 10, 14],  // Élève 1 
+        [8, 11, 9, 13],    // Élève 2 
+        [16, 18, 17, 19]   // Élève 3 
+    ] 
+                    </pre>
+                    <ol class="list-decimal list-inside">
+                        <li class="mb-2">Écrire un algorithme qui affiche toutes les notes avec le format : </li>
+                        <pre class="mockup-code text-left mb-4">
+                        <code>
+    Élève 1 : 12, 15, 10, 14 
+    Élève 2 : 8, 11, 9, 13 
+    Élève 3 : 16, 18, 17, 19
+                    </pre>
+                        <li class="mb-4">Écrire une fonction calculerMoyenneEleve(tableau, numeroEleve) qui : 
+                            <ul class="list-disc list-inside">
+                                <li>Prend en paramètre le tableau de notes et le numéro de l'élève (0, 1, ou 2)</li>
+                                <li>Calcule la moyenne de cet élève</li>
+                                <li>Retourne cette moyenne</li>
+                            </ul>
+                        </li>
+                        <li class="mb-2">Utiliser cette fonction dans un algorithme principal pour :
+                            <ul class="list-disc list-inside">
+                                <li>Afficher la moyenne de chaque élève</li>
+                                <li>Identifier et afficher quel élève a la meilleure moyenne</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <section class="mb-12">
+           <div class="card bg-secondary/70 text-primary-content shadow-lg">
+                 <div class="card-body">
+                    <h3 class="card-title text-2xl">1. Affichage</h3>
+                    <p class="mb-4">
+                        Écrire un algorithme qui affiche toutes les notes avec le format :  
+                    </p>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">FORMAT :</span>
+
+    Élève 1 : 12, 15, 10, 14 
+    Élève 2 : 8, 11, 9, 13 
+    Élève 3 : 16, 18, 17, 19 
+                        </code>
+                    </pre>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">ALGORITHME :</span> 
+
+    notes ← [ 
+        [12, 15, 10, 14],  
+        [8, 11, 9, 13],   
+        [16, 18, 17, 19]  
+    ]
+
+    POUR i de 0 à taille de notes - 1
+        note ← notes[i][0];
+        POUR j de 1 à taille de notes[i] - 1
+            note ← note + ", " + notes[i][j]
+        FIN POUR
+        AFFICHER "Elève " + (i + 1) + " : " + note"
+    FIN POUR
+                        </code>
+                    </pre>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">JavaScript :</span> 
+
+    const notes = [ 
+        [12, 15, 10, 14],
+        [8, 11, 9, 13],
+        [16, 18, 17, 19]
+    ]
+    
+    let note = 0;
+
+    for (let i = 0; i < notes.length; i++) {
+        note = notes[i][0];
+        for (let j = 1; j < notes[i].length; j++) {
+            note = `${note}, ${notes[i][j]}` 
+        }
+        console.log("Elève " + (i + 1) + " : " + note);
+    }
+
+                        </code>
+                    </pre>    
+                    <h3 class="card-title text-2xl mt-4">2. Fonction de calcul</h3>
+                    <p>
+                        Écrire une fonction calculerMoyenneEleve(tableau, numeroEleve) qui :
+                    </p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li>Prend en paramètre le tableau de notes et le numéro de l'élève (0, 1, ou 2)</li>
+                        <li>Calcule la moyenne de cet élève</li>
+                        <li>Retourne cette moyenne</li>
+                    </ul>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">ALGORITHME :</span>
+
+    FONCTION calculerMoyenneEleve(tableau, numeroEleve)
+        nombreNotes ← 0
+        sommeNotes ← 0
+        POUR j de 0 à taille de tableau - 1
+            nombreNotes ← nombreNotes + 1
+            sommeNotes ← sommeNotes + tableau[j]
+        FIN POUR
+        moyenneEleve ← sommeNotes / nombreNotes
+        SI 0 <= moyenneEleve <= 20
+            RETOURNER moyenneEleve
+        SINON SI
+            RETOURNER "Erreur : Notes invalides"
+        FIN SI
     FIN FONCTION
                         </code>
                     </pre>
@@ -164,7 +357,208 @@
                         <code>
     <span class="font-bold text-secondary">JavaScript :</span> 
 
-    funct
+    function calculerMoyenneEleve(tableau, numeroEleve) {
+        let sommeNotes = 0;
+        let nombreNotes = 0;
+        for (let j = 0; j < tableau.length; j++) {
+            nombreNotes = nombreNotes + 1;
+            sommeNotes = sommeNotes + tableau[j];
+        }
+        let moyenneEleve = sommeNotes / nombreNotes;
+        if (moyenneEleve >= 0 && moyenneEleve <= 20) {
+            return Math.round(moyenneEleve *100) / 100;
+        } else {
+            return 'Erreur : Notes invalides'
+        }
+    }
+                        </code>
+                    </pre>
+                    <h3 class="card-title text-2xl mt-4">3. Utilisation </h3>
+                    <p>
+                        Utiliser cette fonction dans un algorithme principal pour : 
+                    </p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li>Afficher la moyenne de chaque élève</li>
+                        <li>Identifier et afficher quel élève a la meilleure moyenne </li>
+                    </ul>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">ALGORITHME :</span>
+    
+    AFFICHER "La moyenne de l'élève 1 est de " + calculerMoyenneEleve(notes[0], 0)
+    AFFICHER "La moyenne de l'élève 2 est de " + calculerMoyenneEleve(notes[1], 1)
+    AFFICHER "La moyenne de l'élève 3 est de " + calculerMoyenneEleve(notes[2], 2)
+
+    meilleureMoyenne ← 0
+    numeroEleve ← 0
+
+    POUR i de 0 à taille notes
+        SI calculerMoyenneEleve(notes[i], i) > meilleureMoyenne
+            meilleureMoyenne ← calculerMoyenneEleve(notes[i], i)
+        FIN SI
+    FIN POUR
+
+    AFFICHER "La meilleure moyenne de la classe est de " + meilleureMoyenne + " obtenue par l'élève " + numeroEleve
+                        </code>
+                    </pre>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">JavaScript :</span>
+
+    console.log("La moyenne de l'élève 1 est de " + calculerMoyenneEleve(notes[0], 0));
+    console.log("La moyenne de l'élève 2 est de " + calculerMoyenneEleve(notes[1], 1));
+    console.log("La moyenne de l'élève 3 est de " + calculerMoyenneEleve(notes[2], 2));
+
+    let meilleureMoyenne = 0;
+    let numeroEleve = 0;
+
+    for (let i = 0; i < notes.length; i++) {
+        if (calculerMoyenneEleve(notes[i], i) > meilleureMoyenne) {
+            meilleureMoyenne = calculerMoyenneEleve(notes[i], i)
+            numeroEleve = i + 1;
+        }
+    };
+
+    console.log(`La meilleure moyenne de la classe est de ${meilleureMoyenne} obtenue par l'élève ${numeroEleve}`);
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+        <section class="mb-12">
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h3 class="card-title text-2xl">Exercice 4 : Algorithme de tri</h3>
+                    <p class="space-y-2 mt-3">Soit le tableau : [64, 34, 25, 12, 22, 11, 90]</p>
+                    <p class="font-bold space-y-2 mt-3">Partie 1 : Algorithme complet</p>
+                    <p class="space-y-2 mt-3">Écrire l'algorithme complet du tri à bulles (bubble sort)</p>
+                    <p class="font-bold space-y-2 mt-3">Partie 2 : Traçage</p>
+                    <p class="space-y-2 mt-3">Tracer les 2 premiers passages de l'algorithme sur ce tableau :</p>
+                    <ul class="list-disc list-inside">
+                        <li>Indiquer toutes les comparaisons effectuées</li>
+                        <li>Indiquer tous les échanges réalisés</li>
+                        <li>Montrer l'état du tableau après chaque passage</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="mb-12">
+           <div class="card bg-secondary/70 text-primary-content shadow-lg">
+                 <div class="card-body">
+                    <h3 class="card-title text-2xl">Partie 1 :  Algorithme complet</h3>
+                    <p class="mb-4">
+                        Écrire l'algorithme complet du tri à bulles (bubble sort) 
+                    </p>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">ALGORITHME :</span>
+
+    tableau ← [64, 34, 25, 12, 22, 11, 90]
+
+    POUR i de 0 à taille de tableau - 2
+        tri ← vrai
+        POUR j de 0 à taille de tableau - 2 - i
+            SI tableau[j] > tableau[j + 1]
+                temp ← tableau[j]
+                tableau[j] ← tableau[j + 1]
+                tableau[j + 1] ← temp
+                tableau ← faux
+            FIN SI
+        FIN POUR
+        SI tri est vrai
+            SORTIR DE LA BOUCLE
+        FIN SI
+    FIN POUR
+                        </code>
+                    </pre>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">JavaScript :</span> 
+
+    const tableEx4 = [61, 34, 25, 12, 22, 11, 90];
+
+    for(let i = 0; i < tableEx4.length - 1; i++) {
+        let tri = true;
+        for(let j = 0; j < tableEx4.length - 1 - i; j++) {
+            if(tableEx4[j] > tableEx4[j+1]) {
+                let temp = tableEx4[j];
+                tableEx4[j] = tableEx4[j+1];
+                tableEx4[j+1] = temp;
+                tri = false;
+            }
+        }
+        if(tri) {
+            break;
+        }
+    };
+                        </code>
+                    </pre>    
+                    <h3 class="card-title text-2xl mt-4">Partie 2 : Traçage</h3>
+                    <p class="mb-4">
+                        Tracer les 2 premiers passages de l'algorithme sur ce tableau
+                    </p>
+                    <pre class="mockup-code text-left">
+                        <code>
+    <span class="font-bold text-secondary">EXECUTION ALGORITHME :</span>
+
+    tableau ← [64, 34, 25, 12, 22, 11, 90]
+
+    <span class="font-bold text-secondary">1er tour de boucle :</span>
+    <span class="font-bold">Compare :</span> 64 > 34
+    <span class="font-bold">Echange :</span> 34 et 64 ; tri devient faux
+    <span class="font-bold">Etat du tableau :</span> tableau ← [34, 64, 25, 12, 22, 11, 90]
+
+    <span class="font-bold text-secondary">1er tour de boucle :</span>
+    <span class="font-bold">Compare :</span> 64 > 25
+    <span class="font-bold">Echange :</span> 64 et 25 ; tri est faux
+    <span class="font-bold">Etat du tableau :</span> tableau ← [34, 25, 64, 12, 22, 11, 90]
+
+    <span class="font-bold text-secondary">1er tour de boucle :</span>
+    <span class="font-bold">Compare :</span> 64 > 12
+    <span class="font-bold">Echange :</span> 64 et 12 ; tri est faux
+    <span class="font-bold">Etat du tableau :</span> tableau ← [34, 25, 12, 64, 22, 11, 90]
+
+    <span class="font-bold text-secondary">1er tour de boucle :</span>
+    <span class="font-bold">Compare :</span> 64 > 22
+    <span class="font-bold">Echange :</span> 64 et 22 ; tri est faux
+    <span class="font-bold">Etat du tableau :</span> tableau ← [34, 25, 12, 22, 64, 11, 90]
+    
+    <span class="font-bold text-secondary">1er tour de boucle :</span>
+    <span class="font-bold">Compare :</span> 64 > 11
+    <span class="font-bold">Echange :</span> 64 et 11 ; tri est faux
+    <span class="font-bold">Etat du tableau :</span> tableau ← [34, 25, 12, 22, 11, 64, 90]
+
+    <span class="font-bold text-secondary">1er tour de boucle :</span>
+    <span class="font-bold">Compare :</span> 64 n'est pas > 90 (condition non remplie)
+    <span class="font-bold">Echange :</span> non effectué et tri reste faux
+    <span class="font-bold">Etat du tableau :</span> tableau ← [34, 25, 12, 22, 11, 64, 90]
+    → Fin de la boucle "j" mais tri est faux donc ne sort pas de la boucle "i"
+
+    <span class="font-bold text-secondary">2ème tour de boucle :</span>
+    <span class="font-bold">Compare :</span> 34 > 25
+    <span class="font-bold">Echange :</span> 34 et 25 ; tri est faux
+    <span class="font-bold">Etat du tableau :</span> tableau ← [25, 34, 12, 22, 11, 64, 90]
+
+    <span class="font-bold text-secondary">2ème tour de boucle :</span>
+    <span class="font-bold">Compare :</span> 34 > 12
+    <span class="font-bold">Echange :</span> 34 et 12 ; tri est faux
+    <span class="font-bold">Etat du tableau :</span> tableau ← [25, 12, 34, 22, 11, 64, 90]
+
+    <span class="font-bold text-secondary">2ème tour de boucle :</span>
+    <span class="font-bold">Compare :</span> 34 > 22
+    <span class="font-bold">Echange :</span> 34 et 22 ; tri est faux
+    <span class="font-bold">Etat du tableau :</span> tableau ← [25, 12, 22, 34, 11, 64, 90]
+
+    <span class="font-bold text-secondary">2ème tour de boucle :</span>
+    <span class="font-bold">Compare :</span> 34 > 11
+    <span class="font-bold">Echange :</span> 34 et 11 ; tri est faux
+    <span class="font-bold">Etat du tableau :</span> tableau ← [25, 12, 22, 11, 34, 64, 90]
+
+    <span class="font-bold text-secondary">2ème tour de boucle :</span>
+    <span class="font-bold">Compare :</span> 34 n'est pas > 64 (condition non remplie)
+    <span class="font-bold">Echange :</span> non effectué et tri reste faux
+    <span class="font-bold">Etat du tableau :</span> tableau ← [25, 12, 22, 11, 34, 64, 90]
+    → Fin de la boucle "j" mais tri est faux donc ne sort pas de la boucle "i"
                         </code>
                     </pre>    
                 </div>
@@ -176,7 +570,7 @@
             Lien de téléchargement du docx : 
         </p>
         <p class="text-lg text-primary max-w-2xl mx-auto">
-            <a href="https://docs.google.com/document/d/1bc4HaWU69b5nCybgeczRyEPY1MC8OLY4/edit?usp=drive_link&ouid=105637924858175107260&rtpof=true&sd=true">Algo_Evaluation_Rattrage-Bezes_Remi.docx</a>
+            <a href="https://docs.google.com/document/d/1bc4HaWU69b5nCybgeczRyEPY1MC8OLY4/edit?usp=drive_link&ouid=105637924858175107260&rtpof=true&sd=true" target="_blank">Algo_Evaluation_Rattrage-Bezes_Remi.docx</a>
         </p>
     </footer>
     <script type="module" src="/src/main.js"></script>
