@@ -38,3 +38,24 @@ console.log(counter);
 //     }
 // });
 // console.log(counter);
+
+//----------------------------------------------------------------------
+//! EXERCICE 2
+
+//TODO Fonction qui calcul le prix TTX
+
+function calculerPrixTTC(prixHT, tauxTVA) {
+    let prixTTC = prixHT + (prixHT * tauxTVA / 100);
+    return prixTTC
+};
+
+// console.log(calculerPrixTTC(10,2));
+
+//TODO Algorithme principal
+
+let prixHT = 0;
+let tauxTVA = 0;
+
+if (prixHT > 0) {
+    prixHT = prompt("Entrez le prix HT :");
+}
