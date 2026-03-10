@@ -291,17 +291,20 @@
                         <code>
     <span class="font-bold text-accent">JavaScript :</span>
 
-    function emprunterLivre(tableau, position) {
-        if (tableau[position]) {
-            if (rechercherLivre(tableau, tableau[position][0]) != -1) {
-                if (tableau[position][3]) {
-                    console.log("Emprunt réussi : " + tableau[position][0]);
-                    return tableau[position][3] = false;
+    function trierParAnnee(tableau) {
+        for (let i = 0; i < tableau.length - 1; i++) {
+            let index = i;
+            for (let j = i + 1; j < tableau.length; j++) {
+                if (tableau[j][2] < tableau[index][2]) {
+                    index = j
                 }
-            return console.log("Ce livre est déjà emprunté");   
             }
-        }
-        console.log("Livre non trouvé");
+            if (index !== i) {
+                let temp = tableau[index];
+                tableau[index] = tableau[i];
+                tableau[i] = temp
+            }
+        } 
     };
                         </code>
                     </pre>

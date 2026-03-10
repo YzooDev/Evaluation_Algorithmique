@@ -161,7 +161,7 @@
     <span class="font-bold text-secondary">ALGORITHME :</span>
 
     FONCTION calculerPrixTTC(prixHT, tauxTVA)
-        SI prixHT > 0 et tauxTVA > 0
+        SI prixHT > 0 et tauxTVA > 0 et tauxTVA <= 100
             RETOURNER prixTTC ← prixHT + (prixHT * tauxTVA / 100)
         FIN SI
     FIN
@@ -172,7 +172,7 @@
     <span class="font-bold text-secondary">JavaScript :</span> 
 
     function calculerPrixTTC(prixHT, tauxTVA) {
-        if (prixHT > 0 && tauxTVA > 0) {
+        if (prixHT > 0 && tauxTVA > 0 && tauxTVA <= 100) {
             return prixTTC = prixHT + (prixHT * tauxTVA / 100)
         }
     };
@@ -190,23 +190,29 @@
     DEMANDER tauxTVA
     SOTCKER tauxTVA
     prixTTC ← calculerPrixTTC(prixHT, tauxTVA)
-    AFFICHER "le prix TTC est : " + prixTTC
+    SI calculerPrixTTC(prixHT, tauxTVA) existe
+        AFFICHER "le prix TTC est : " + prixTTC
+    SINON
+        AFFICHER "Veuillez saisir un prix HT et un taux de TVA valide"
+    FIN SI
                         </code>
                     </pre>
                     <pre class="mockup-code text-left">
                         <code>
-    <span class="font-bold text-secondary">JavaScript :</span> 
+    <span class="font-bold text-secondary">JavaScript :</span>
+    
+    let prixTTC = 0;
 
     let buttonCalcul = document.querySelector('button');
+    
     buttonCalcul.addEventListener("click", () => {
         const inputPrixHT = document.getElementById('prixHT');
         const inputTauxTVA = document.getElementById('tauxTVA');
         let result = document.getElementById('result');
         const prixHT = inputPrixHT.value;
         const tauxTVA = inputTauxTVA.value;
-        if (prixHT > 0 && tauxTVA > 0 && tauxTVA < 100) {
+        if (calculerPrixTTC(prixHT, tauxTVA)) {
             result.innerText = ` ${calculerPrixTTC(parseInt(prixHT), parseInt(tauxTVA))}`;
-            console.log(calculerPrixTTC(parseInt(prixHT), parseInt(tauxTVA)));
         } else {
             result.innerText = ' Veuillez saisir un prix HT et un taux de TVA valide';
         };
@@ -345,7 +351,7 @@
             sommeNotes ← sommeNotes + tableau[j]
         FIN POUR
         moyenneEleve ← sommeNotes / nombreNotes
-        SI 0 <= moyenneEleve <= 20
+        SI 0 <= moyenneEleve et moyenneEleve <= 20
             RETOURNER moyenneEleve
         SINON SI
             RETOURNER "Erreur : Notes invalides"
@@ -362,11 +368,11 @@
         let nombreNotes = 0;
         for (let j = 0; j < tableau.length; j++) {
             nombreNotes = nombreNotes + 1;
-            sommeNotes = sommeNotes + tableau[j];
+            sommeNotes = sommeNotes + tableau[j]
         }
         let moyenneEleve = sommeNotes / nombreNotes;
         if (moyenneEleve >= 0 && moyenneEleve <= 20) {
-            return Math.round(moyenneEleve *100) / 100;
+            return Math.round(moyenneEleve *100) / 100
         } else {
             return 'Erreur : Notes invalides'
         }

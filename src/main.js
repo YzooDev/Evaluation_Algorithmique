@@ -46,31 +46,29 @@ console.log(compteur);
 //TODO fonction calculerPrixTTC(prixHT, tauxTVA)
 
 function calculerPrixTTC(prixHT, tauxTVA) {
-    if (prixHT > 0, tauxTVA > 0) {
+    if (prixHT > 0 && tauxTVA > 0) {
         return prixTTC = prixHT + (prixHT * tauxTVA / 100)
     }
 };
 
 let prixTTC = 0;
 
-console.log(calculerPrixTTC(10,2));
-
 //TODO Algorithme principal
 
 let buttonCalcul = document.querySelector('button');
-buttonCalcul.addEventListener("click", () => {
-    const inputPrixHT = document.getElementById('prixHT');
-    const inputTauxTVA = document.getElementById('tauxTVA');
-    let result = document.getElementById('result');
-    const prixHT = inputPrixHT.value;
-    const tauxTVA = inputTauxTVA.value;
-    if (prixHT > 0 && tauxTVA > 0 && tauxTVA < 100) {
-        result.innerText = `    ${calculerPrixTTC(parseInt(prixHT), parseInt(tauxTVA))}`;
-        console.log(calculerPrixTTC(parseInt(prixHT), parseInt(tauxTVA)));
-    } else {
-        result.innerText = '    Veuillez saisir un prix HT et un taux de TVA valide';
-    };
-});
+    buttonCalcul.addEventListener("click", () => {
+        const inputPrixHT = document.getElementById('prixHT');
+        const inputTauxTVA = document.getElementById('tauxTVA');
+        let result = document.getElementById('result');
+        const prixHT = inputPrixHT.value;
+        const tauxTVA = inputTauxTVA.value;
+        if (calculerPrixTTC(prixHT, tauxTVA)) {
+            result.innerText = ` ${calculerPrixTTC(parseInt(prixHT), parseInt(tauxTVA))}`;
+            console.log(calculerPrixTTC(parseInt(prixHT), parseInt(tauxTVA)));
+        } else {
+            result.innerText = ' Veuillez saisir un prix HT et un taux de TVA valide';
+        };
+    });
 // console.log(calculerPrixTTC(inputPrixHT.value, inputTauxTVA.value));
 
 

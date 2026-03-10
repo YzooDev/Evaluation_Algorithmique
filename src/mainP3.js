@@ -72,8 +72,8 @@ function trierParAnnee(tableau) {
             }
         }
         if (index !== i) {
-            let temp = tableau[index]
-            tableau[index] = tableau[i]
+            let temp = tableau[index];
+            tableau[index] = tableau[i];
             tableau[i] = temp
         }
     } 
